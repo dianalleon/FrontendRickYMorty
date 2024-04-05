@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlRick: "https://rickandmortyapi.com/",
+  url_Pokemon: "https://pokeapi.co/",
+  url_Marvel: "https://developer.marvel.com/"
 };
 
 /*
