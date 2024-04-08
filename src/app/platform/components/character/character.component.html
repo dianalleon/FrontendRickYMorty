@@ -1,1 +1,19 @@
-<p>character works!</p>
+<section class="cnt-section">
+  <mat-card class="cnt" *ngFor="let character of characters" [ngClass]="{ 'shadow': this.id == character.id }"
+            (click)="openDialog(character)">
+    <mat-card-header>
+      <img class="img_icon" [src]="character.image">
+    </mat-card-header>
+    <mat-card-content class="cnt-content">
+      <div class="cnt-content-div">
+        <h1>{{character.name}}</h1>
+        <h4>{{character.status}}:{{character.species}}</h4>
+      </div>
+      <div class="cnt-content-div">
+        <h4>Last known location:</h4>
+        <h3>{{character.location.name}}</h3>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
+

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {CharacterComponent} from "./character/character.component";
 import {DetailsCharacterComponent} from "./details-character/details-character.component";
 import {ListComponent} from "./list/list.component";
+import {MaterialModule} from "../../material/material.module";
 
 @NgModule({
   declarations: [
@@ -10,8 +11,14 @@ import {ListComponent} from "./list/list.component";
     DetailsCharacterComponent,
     ListComponent
   ],
+  exports: [
+    ListComponent,
+    CharacterComponent,
+    DetailsCharacterComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ]
 })
 export class ComponentsModule { }

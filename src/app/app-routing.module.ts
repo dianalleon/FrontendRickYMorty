@@ -5,7 +5,7 @@ import {DesktopComponent} from "./platform/desktop/desktop.component";
 const routes: Routes = [
   { path: 'desktop', component: DesktopComponent },
   { path: 'mobile', loadChildren: () => import('./platform/mobile/mobile.module').then(m => m.MobileModule) },
-  { path: '**', redirectTo: 'desktop' }
+  { path: '**', redirectTo: 'mobile' }
 ];
 
 @NgModule({

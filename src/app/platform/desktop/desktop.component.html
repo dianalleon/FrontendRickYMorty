@@ -1,1 +1,11 @@
-<p>desktop works!</p>
+<mat-drawer-container autosize class="cnt-container">
+  <mat-drawer #drawer mode="side" class="cnt-sidenav">
+    <app-list [view]="'desktop'" ></app-list>
+  </mat-drawer>
+  <div>
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <app-character></app-character>
+  </div>
+</mat-drawer-container>

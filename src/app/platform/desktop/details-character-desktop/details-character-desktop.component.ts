@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {Character} from "../../../interfaces/character";
 
 @Component({
   selector: 'app-details-character-desktop',
   templateUrl: './details-character-desktop.component.html',
   styleUrls: ['./details-character-desktop.component.sass']
 })
-export class DetailsCharacterDesktopComponent implements OnInit {
+export class DetailsCharacterDesktopComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(@Inject(MAT_DIALOG_DATA) public detailsCharacter: Character) { }
 }
