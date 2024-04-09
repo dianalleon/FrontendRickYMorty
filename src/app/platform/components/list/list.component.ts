@@ -54,6 +54,4 @@ export class ListComponent implements OnInit {
       queryParamsHandling: 'merge'
     })
   }
-
-
 }

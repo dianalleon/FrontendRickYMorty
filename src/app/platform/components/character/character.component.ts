@@ -7,7 +7,6 @@ import {
 } from "../../desktop/details-character-desktop/details-character-desktop.component";
 import {MatDialog} from "@angular/material/dialog";
 import {ActivatedRoute, Router} from "@angular/router";
-import {query} from "@angular/animations";
 
 @Component({
   selector: 'app-character',
@@ -17,10 +16,12 @@ import {query} from "@angular/animations";
 export class CharacterComponent implements OnInit {
   @Input() view!: "desktop" | "mobile"
 
-  id!:string | null;
+  id!: string | null;
   characters: Character[] = [];
-  constructor(private backend: BackendService, public dialog:MatDialog,
-              private route: ActivatedRoute, private router: Router) { }
+
+  constructor(private backend: BackendService, public dialog: MatDialog,
+              private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -29,20 +30,22 @@ export class CharacterComponent implements OnInit {
     this.getCharacter();
   }
 
-  getCharacter(){
-    this.backend.getCharacter().subscribe( (result: Paginator) => this.characters = result.results)
+  getCharacter() {
+    this.backend.getCharacter().subscribe((result: Paginator) => this.characters = result.results)
   }
 
-  openDialog(character: Character){
-    if(this.view == 'mobile'){
+  openDialog(character: Character) {
+    this.backend.setCharacterSelect(character);
+    if (this.view == 'mobile') {
       this.mobileCharacter(character)
+    } else {
+      this.dialog.open(DetailsCharacterDesktopComponent, {
+        width: '250px'
+      })
     }
-    this.dialog.open(DetailsCharacterDesktopComponent, {
-      data: character
-    })
   }
 
-  mobileCharacter(character: Character){
+  mobileCharacter(character: Character) {
     this.router.navigateByUrl(`/mobile/details/${character.id}`)
   }
 }

@@ -9,5 +9,5 @@ import {Character} from "../../../interfaces/character";
 })
 export class DetailsCharacterDesktopComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public detailsCharacter: Character) { }
+  constructor() { }
 }
