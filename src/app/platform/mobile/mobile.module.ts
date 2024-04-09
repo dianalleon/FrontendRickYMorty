@@ -8,14 +8,12 @@ import { CharacterMobileComponent } from './character-mobile/character-mobile.co
 import {ComponentsModule} from "../components/components.module";
 import {SharedModule} from "../shared/shared.module";
 
-
 @NgModule({
   declarations: [
     ListCharacterMobileComponent,
     DetailsCharacterMobileComponent,
     CharacterMobileComponent
   ],
-
   imports: [
     CommonModule,
     MobileRoutingModule,

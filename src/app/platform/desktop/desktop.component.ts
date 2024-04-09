@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-desktop',
   templateUrl: './desktop.component.html',
   styleUrls: ['./desktop.component.sass']
 })
-export class DesktopComponent implements OnInit {
-
+export class DesktopComponent{
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

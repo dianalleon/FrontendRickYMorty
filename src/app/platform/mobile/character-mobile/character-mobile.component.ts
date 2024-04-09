@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component} from '@angular/core';
 @Component({
   selector: 'app-character-mobile',
   templateUrl: './character-mobile.component.html',
   styleUrls: ['./character-mobile.component.sass']
 })
-export class CharacterMobileComponent implements OnInit {
+export class CharacterMobileComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
