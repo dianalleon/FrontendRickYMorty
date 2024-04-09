@@ -4,6 +4,7 @@ import { DetailsCharacterDesktopComponent } from './details-character-desktop/de
 import { DesktopComponent } from './desktop.component';
 import {MaterialModule} from "../../material/material.module";
 import {ComponentsModule} from "../components/components.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {ComponentsModule} from "../components/components.module";
     CommonModule,
     MaterialModule,
     ComponentsModule,
+    SharedModule
   ]
 })
 export class DesktopModule { }

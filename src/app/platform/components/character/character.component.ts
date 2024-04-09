@@ -2,10 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {BackendService} from "../../../services/backend.service";
 import {Character} from "../../../interfaces/character";
 import {Paginator} from "../../../interfaces/paginator";
-import {
-  DetailsCharacterDesktopComponent
-} from "../../desktop/details-character-desktop/details-character-desktop.component";
-import {MatDialog} from "@angular/material/dialog";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -19,9 +15,7 @@ export class CharacterComponent implements OnInit {
   id!: string | null;
   characters: Character[] = [];
 
-  constructor(private backend: BackendService, public dialog: MatDialog,
-              private route: ActivatedRoute, private router: Router) {
-  }
+  constructor(private backend: BackendService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -39,9 +33,7 @@ export class CharacterComponent implements OnInit {
     if (this.view == 'mobile') {
       this.mobileCharacter(character)
     } else {
-      this.dialog.open(DetailsCharacterDesktopComponent, {
-        width: '250px'
-      })
+      this.backend.openDialog();
     }
   }
 

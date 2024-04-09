@@ -6,6 +6,7 @@ import {ListCharacterMobileComponent} from "./list-character-mobile/list-charact
 import { DetailsCharacterMobileComponent } from './details-character-mobile/details-character-mobile.component';
 import { CharacterMobileComponent } from './character-mobile/character-mobile.component';
 import {ComponentsModule} from "../components/components.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -14,10 +15,12 @@ import {ComponentsModule} from "../components/components.module";
     DetailsCharacterMobileComponent,
     CharacterMobileComponent
   ],
-    imports: [
-        CommonModule,
-        MobileRoutingModule,
-        ComponentsModule
-    ]
+
+  imports: [
+    CommonModule,
+    MobileRoutingModule,
+    ComponentsModule,
+    SharedModule
+  ]
 })
 export class MobileModule { }

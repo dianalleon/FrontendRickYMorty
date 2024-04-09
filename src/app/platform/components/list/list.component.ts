@@ -19,7 +19,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListCharacter();
-    console.log(this.router.url)
   }
 
   getListCharacter(){
@@ -33,6 +32,8 @@ export class ListComponent implements OnInit {
       this.mobileCharacter(character)
     } else {
       this.desktopCharacter(character)
+      this.backend.setCharacterSelect(character);
+      this.backend.openDialog();
     }
   }
 
@@ -47,11 +48,11 @@ export class ListComponent implements OnInit {
     const query = {
       id: character.id
     }
-
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: query,
       queryParamsHandling: 'merge'
     })
+
   }
 }
